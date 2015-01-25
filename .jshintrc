@@ -2,7 +2,13 @@
   "predef": [
     "document",
     "window",
-    "-Promise"
+    "-Promise",
+    "gettext",
+    "ngettext",
+    "gettext_noop",
+    "pgettext",
+    "npgettext",
+    "interpolate"
   ],
   "browser": true,
   "boss": true,

@@ -1,25 +1,21 @@
-# Django-ember-gettext
+# django-ember-gettext
 
-This README outlines the details of collaborating on this Ember addon.
+Ember helpers for using Django JS translation functions in templates.
 
 ## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+TODO
 
-## Running
+## Usage
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+### .hbs and .handlebars
+
+TODO
+
+### .js files
+
+TODO
 
 ## Running Tests
 
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+To run tests use `ember test`.
