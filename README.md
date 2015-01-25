@@ -1,5 +1,8 @@
 # django-ember-gettext
 
+[![Build Status](https://travis-ci.org/rafalp/django-ember-gettext.svg?branch=master)](https://travis-ci.org/rafalp/django-ember-gettext)
+[![GitHub version](https://badge.fury.io/gh/rafalp%2Fdjango-ember-gettext.svg)](http://badge.fury.io/gh/rafalp%2Fdjango-ember-gettext)
+
 Ember helpers for using Django JS translation functions in Handlebars.
 
 Please note that this package only adds template helpers. For `makemessages` support you will need to install dedicated python library.
