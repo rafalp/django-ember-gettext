@@ -2,6 +2,8 @@
 
 Ember helpers for using Django JS translation functions in Handlebars.
 
+Please note that this package only adds template helpers. For `makemessages` support you will need to install dedicated python library.
+
 ## Installation
 
 First, install latest version of package in in your Ember-CLI project with following command:
@@ -10,13 +12,13 @@ First, install latest version of package in in your Ember-CLI project with follo
 npm install --save-dev django-ember-gettext
 ```
 
-Now make Ember use load and register helpers by adding following line in your `app.js`:
+Now add following line in your `app.js` to make Ember register addon's helpers:
 
 ```javascript
 import 'django-ember-gettext/helpers/gettext';
 ```
 
-Next add following global functions to your `.jshintrc` `predef` setting:
+Then add following global functions to your `.jshintrc` `predef` setting:
 
 ```javascript
 "gettext",
@@ -27,7 +29,7 @@ Next add following global functions to your `.jshintrc` `predef` setting:
 "interpolate"
 ```
 
-Finally make browser load Django JS catalog by adding `<script>` element above ember's and your application .js files in your html. Example configuration may look like this:
+Finally make browser load Django JS catalog by adding it's `<script>` element above Ember's and your application's .js files in your template. Example configuration may look like this:
 
 ```html
 <script src="/django-i18n.js"></script>
@@ -39,14 +41,15 @@ Finally make browser load Django JS catalog by adding `<script>` element above e
 
 This addon brings four helpers to your templates. Each helper accepts between one and four required arguments and any number of keyword arguments corresponding to `%(formats)s` in translated message.
 
-Please note that template helpers are **not supported** by Django-Admin's `makemessages`.
+To nest helpers use Ember 1.10 and HTMLBars.
 
 ### gettext
 
-`gettext` helper has one required argument: `msgid`.
+`gettext` helper has one required argument, `msgid`, that is either untranslated string or variable to translate:
 
 ```
 {{gettext "We're sorry but this page is not available."}}
+{{gettext user.title.name}}
 ```
 
 ### ngettext
@@ -59,7 +62,7 @@ Please note that template helpers are **not supported** by Django-Admin's `makem
 
 ### pgettext
 
-`pgettext` helper has two required arguments: `context` and `msgid`:
+`pgettext` helper has two required arguments, `context` and `msgid`:
 
 ```
 {{ngettext "month" "May"}}
@@ -78,7 +81,3 @@ Please note that template helpers are **not supported** by Django-Admin's `makem
 Django supports translation of messages in JavaScript files out of the box. For its usage see Django documentation:
 
 [Using the JavaScript translation catalog](https://docs.djangoproject.com/en/1.7/topics/i18n/translation/#using-the-javascript-translation-catalog)
-
-## Running Tests
-
-To run tests use `ember test`.
