@@ -15,10 +15,11 @@ Install latest version of package in in your Ember-CLI project with following co
 ember install:addon django-ember-gettext
 ```
 
-Add following line in your `app.js` to make Ember register addon's helpers:
+In `app.js` import `registerGettextHelpers` from module and call it:
 
 ```javascript
-import 'django-ember-gettext/helpers/gettext';
+import registerGettextHelpers from 'django-ember-gettext/helpers/gettext';
+registerGettextHelpers();
 ```
 
 Add following global names to your `.jshintrc` `predef` setting:
@@ -95,7 +96,7 @@ Django supports translation of messages in JavaScript files out of the box. For 
 
 # Copyright and license
 
-Copyright © 2014 `Rafał Pitoń <http://github.com/ralfp>`_
+Copyright © 2014 [Rafał Pitoń](http://github.com/ralfp>)
 This program comes with ABSOLUTELY NO WARRANTY.
 
 This is free software and you are welcome to modify and redistribute it under the conditions described in the license.

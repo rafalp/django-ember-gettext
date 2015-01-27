@@ -1,5 +1,6 @@
 import Ember from 'ember';
-import 'django-ember-gettext/helpers/gettext';
+import registerGettextHelpers from 'django-ember-gettext/helpers/gettext';
+registerGettextHelpers();
 
 module('Gettext Helpers');
 

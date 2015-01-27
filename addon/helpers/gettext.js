@@ -1,10 +1,6 @@
 import Ember from 'ember';
 
-var registerHelper = Ember.HTMLBars.registerHelper;
-var makeBoundHelper = Ember.HTMLBars.makeBoundHelper;
-
-registerHelper('gettext', makeBoundHelper(function(args, kwargs) {
-
+export function gettextHelper(args, kwargs) {
   var msgid = args[0];
 
   if (Object.getOwnPropertyNames(kwargs).length > 0) {
@@ -12,11 +8,9 @@ registerHelper('gettext', makeBoundHelper(function(args, kwargs) {
   } else {
     return gettext(msgid);
   }
+}
 
-}));
-
-registerHelper('ngettext', makeBoundHelper(function(args, kwargs) {
-
+export function ngettextHelper(args, kwargs) {
   var singular = args[0];
   var plural = args[1];
   var count = args[2];
@@ -24,10 +18,9 @@ registerHelper('ngettext', makeBoundHelper(function(args, kwargs) {
   kwargs.count = count;
 
   return interpolate(ngettext(singular, plural, count), kwargs, true);
-}));
+}
 
-registerHelper('pgettext', makeBoundHelper(function(args, kwargs) {
-
+export function pgettextHelper(args, kwargs) {
   var context = args[0];
   var msgid = args[1];
 
@@ -36,10 +29,9 @@ registerHelper('pgettext', makeBoundHelper(function(args, kwargs) {
   } else {
     return pgettext(context, msgid);
   }
-}));
+}
 
-registerHelper('npgettext', makeBoundHelper(function(args, kwargs) {
-
+export function npgettextHelper(args, kwargs) {
   var context = args[0];
   var singular = args[1];
   var plural = args[2];
@@ -48,4 +40,14 @@ registerHelper('npgettext', makeBoundHelper(function(args, kwargs) {
   kwargs.count = count;
 
   return interpolate(npgettext(context, singular, plural, count), kwargs, true);
-}));
+}
+
+export default function() {
+  var makeBoundHelper = Ember.HTMLBars.makeBoundHelper;
+  var registerHelper = Ember.HTMLBars.registerHelper;
+
+  registerHelper('gettext', makeBoundHelper(gettextHelper));
+  registerHelper('ngettext', makeBoundHelper(ngettextHelper));
+  registerHelper('pgettext', makeBoundHelper(pgettextHelper));
+  registerHelper('npgettext', makeBoundHelper(npgettextHelper));
+}
