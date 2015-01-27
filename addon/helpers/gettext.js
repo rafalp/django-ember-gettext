@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-export function gettextHelper(args, kwargs) {
+function gettextHelper(args, kwargs) {
   var msgid = args[0];
 
   if (Object.getOwnPropertyNames(kwargs).length > 0) {
@@ -10,7 +10,7 @@ export function gettextHelper(args, kwargs) {
   }
 }
 
-export function ngettextHelper(args, kwargs) {
+function ngettextHelper(args, kwargs) {
   var singular = args[0];
   var plural = args[1];
   var count = args[2];
@@ -20,7 +20,7 @@ export function ngettextHelper(args, kwargs) {
   return interpolate(ngettext(singular, plural, count), kwargs, true);
 }
 
-export function pgettextHelper(args, kwargs) {
+function pgettextHelper(args, kwargs) {
   var context = args[0];
   var msgid = args[1];
 
@@ -31,7 +31,7 @@ export function pgettextHelper(args, kwargs) {
   }
 }
 
-export function npgettextHelper(args, kwargs) {
+function npgettextHelper(args, kwargs) {
   var context = args[0];
   var singular = args[1];
   var plural = args[2];
@@ -42,7 +42,7 @@ export function npgettextHelper(args, kwargs) {
   return interpolate(npgettext(context, singular, plural, count), kwargs, true);
 }
 
-export function registerGettextHelpers() {
+export default function() {
   var makeBoundHelper = Ember.HTMLBars.makeBoundHelper;
   var registerHelper = Ember.HTMLBars.registerHelper;
 
