@@ -42,7 +42,7 @@ export function npgettextHelper(args, kwargs) {
   return interpolate(npgettext(context, singular, plural, count), kwargs, true);
 }
 
-export default function() {
+export function registerGettextHelpers() {
   var makeBoundHelper = Ember.HTMLBars.makeBoundHelper;
   var registerHelper = Ember.HTMLBars.registerHelper;
 
