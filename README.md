@@ -5,23 +5,23 @@
 
 Ember helpers for using Django JS translation functions in Handlebars.
 
-Please note that this package only adds template helpers. For `makemessages` support you will need to install dedicated python library.
+Please note that this package only adds template helpers for Ember.js. To make them work with Django's `makemessages` command please check [django-hbs-makemessages](https://github.com/rafalp/django-ember-gettext) library.
 
 ## Installation
 
-First, install latest version of package in in your Ember-CLI project with following command:
+Install latest version of package in in your Ember-CLI project with following command:
 
 ```console
-npm install --save-dev django-ember-gettext
+ember install:addon django-ember-gettext
 ```
 
-Now add following line in your `app.js` to make Ember register addon's helpers:
+Add following line in your `app.js` to make Ember register addon's helpers:
 
 ```javascript
 import 'django-ember-gettext/helpers/gettext';
 ```
 
-Then add following global functions to your `.jshintrc` `predef` setting:
+Add following global names to your `.jshintrc` `predef` setting:
 
 ```javascript
 "gettext",
@@ -32,7 +32,7 @@ Then add following global functions to your `.jshintrc` `predef` setting:
 "interpolate"
 ```
 
-Finally make browser load Django JS catalog by adding it's `<script>` element above Ember's and your application's .js files in your template. Example configuration may look like this:
+Finally make browser load Django JS catalog by adding it's `<script>` element above Ember's and your application's .js files in your template. Depending on how your project is setup, it's `base.html` template may contain part like this:
 
 ```html
 <script src="/django-i18n.js"></script>
@@ -84,3 +84,19 @@ To nest helpers use Ember 1.10 and HTMLBars.
 Django supports translation of messages in JavaScript files out of the box. For its usage see Django documentation:
 
 [Using the JavaScript translation catalog](https://docs.djangoproject.com/en/1.7/topics/i18n/translation/#using-the-javascript-translation-catalog)
+
+# Authors
+
+**Rafał Pitoń**
+
+* http://rpiton.com
+* http://github.com/rafalp
+* https://twitter.com/RafalPiton
+
+# Copyright and license
+
+Copyright © 2014 `Rafał Pitoń <http://github.com/ralfp>`_
+This program comes with ABSOLUTELY NO WARRANTY.
+
+This is free software and you are welcome to modify and redistribute it under the conditions described in the license.
+For the complete license, refer to LICENSE.rst

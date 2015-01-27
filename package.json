@@ -1,6 +1,6 @@
 {
   "name": "django-ember-gettext",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "description": "Ember helpers for using Django JS gettext functions in Handlebars templates.",
   "directories": {
     "doc": "doc",
@@ -15,7 +15,7 @@
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "Rafał Pitoń",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.0.0",
