@@ -1,12 +1,13 @@
 /* jshint node: true */
 /* global require, module */
 
-var EmberApp = require('ember-cli/lib/broccoli/ember-app'),
-    isProduction = EmberApp.env() === 'production';
-
 var EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
-var app = new EmberAddon();
+var app = new EmberAddon({
+  vendorFiles: {
+    'handlebars.js': null
+  }
+});
 
 // Use `app.import` to add additional libraries to the generated
 // output files.
@@ -21,8 +22,7 @@ var app = new EmberAddon();
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
-if ( !isProduction ) {
-  app.import('vendor/django-js-catalog.js', { type: 'test' } );
-}
+app.import('bower_components/ember/ember-template-compiler.js');
+app.import('vendor/django-js-catalog.js', { type: 'test' } );
 
 module.exports = app.toTree();

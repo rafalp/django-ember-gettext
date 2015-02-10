@@ -1,6 +1,6 @@
 import Ember from 'ember';
-import registerGettextHelpers from 'django-ember-gettext/helpers/gettext';
 
+import registerGettextHelpers from 'django-ember-gettext/main';
 registerGettextHelpers();
 
 module('Gettext Helpers');
@@ -45,13 +45,11 @@ var testCases = [
 
 // Test runner
 testCases.forEach(function(item) {
-
-  var input = item[0],
-      output = item[1];
+  var input = item[0];
+  var output = item[1];
   var caseName = '"' + input + '" was parsed into "' + output + '"';
 
   test(caseName, function() {
     templateRendersTo(input, output);
   });
-
 });
