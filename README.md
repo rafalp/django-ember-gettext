@@ -18,7 +18,7 @@ ember install:addon django-ember-gettext
 In `app.js` import `registerGettextHelpers` from module and call it:
 
 ```javascript
-import registerGettextHelpers from 'django-ember-gettext/main';
+import registerGettextHelpers from 'django-ember-gettext/lib/main';
 registerGettextHelpers();
 ```
 
@@ -100,4 +100,4 @@ Copyright © 2014 [Rafał Pitoń](http://github.com/ralfp>)
 This program comes with ABSOLUTELY NO WARRANTY.
 
 This is free software and you are welcome to modify and redistribute it under the conditions described in the license.
-For the complete license, refer to LICENSE.rst
+For the complete license, refer to LICENSE
