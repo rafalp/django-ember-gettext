@@ -15,13 +15,6 @@ Install latest version of package in in your Ember-CLI project with following co
 ember install:addon django-ember-gettext
 ```
 
-In `app.js` import `registerGettextHelpers` from module and call it:
-
-```javascript
-import registerGettextHelpers from 'django-ember-gettext/lib/main';
-registerGettextHelpers();
-```
-
 Add following global names to your `.jshintrc` `predef` setting:
 
 ```javascript
