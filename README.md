@@ -5,7 +5,7 @@
 
 Ember helpers for using Django JS translation functions in Handlebars.
 
-Please note that this package only adds template helpers for Ember.js. To make them work with Django's `makemessages` command please check [django-hbs-makemessages](https://github.com/rafalp/django-ember-gettext) library.
+Please note that this package only adds template helpers for Ember.js. To make them work with Django's `makemessages` command please check [django-hbs-makemessages](https://github.com/rafalp/django-hbs-makemessages) library.
 
 ## Installation
 
